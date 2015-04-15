@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <a href="https://www.mediafire.com/view/?3hc1r71yv322415" target="_blank"><img src="https://www.mediafire.com/convkey/d188/3hc1r71yv3224156g.jpg" border="0" alt="Simple, Free Image and File Hosting at MediaFire" /></a>
+    <title>GitHub Work</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+<title>GitHubsetup</title>
+</head>
+<body>
+<h1 style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">&nbsp; <strong>GitHubsetup</strong></h1>
+
+<ul class="task-list" style="box-sizing: border-box; padding: 0px 0px 0px 2em; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 16px; line-height: 25.6000003814697px; margin-top: 0px !important; margin-bottom: 0px !important; background-color: rgb(255, 255, 255);">
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">Install openssh:&nbsp;<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">sudo pisi it openssh</code></p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">Install git:&nbsp;<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">sudo pisi it git</code></p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">Create a github ssh-keygen:&nbsp;<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">ssh-keygen -t rsa -C &quot;youremailadress&ldquo;</code></p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">Open the file ~/.ssh/id_rsa.pub and add the text in this file into the ssh key of your github account.</p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">Create a local global user name:&nbsp;<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">git config --global user.name &quot;yourgithubnickname&quot;</code></p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">Create a local global user.email:&nbsp;<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">git config --global user.email &quot;yourgithubemailadress&quot;</code></p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">Make a map for you github sources in your home, as example &#39;github&#39; and go to this new map.</p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">Then clone the pisilinux github:&nbsp;<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">git clone git@github.com:pisilinux/PisiLinux.git</code></p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">After that clone the playground folder:&nbsp;<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">git clone git@github.com:pisilinux/playground.git</code></p>
+	</li>
+	<li style="box-sizing: border-box;">
+	<p style="box-sizing: border-box; margin-top: 16px; margin-bottom: 16px;">All the pisilinux buildfile sources are now local, so happy coding.</p>
+	</li>
+</ul>
+</body>
+</html>
