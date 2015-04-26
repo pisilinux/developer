@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Build with Docker Part 1</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css"
+  media="screen">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700"
+  rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css"
+  media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css"
+  media="screen">
+  <title>Build with Docker Part 1</title>
+</head>
+
+<body>
+<a href="https://www.mediafire.com/view/?3hc1r71yv322415" target="_blank"><img
+src="https://www.mediafire.com/convkey/d188/3hc1r71yv3224156g.jpg" border="0"
+alt="Simple, Free Image and File Hosting at MediaFire"></a> 
+
+<h1 class="page-title"><span
+style="font-family: Arial,Helvetica,sans-serif">Pisi build in Docker -
+I</span></h1>
+
+<div>
+<p style="font-family: Arial,Helvetica,sans-serif">To fix dependencies or
+compiled Pisi Linux Packages in a chroot can you use Docker. We plan to use
+docker to prepare the infrastructure for a distributed farm.. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">The Policy is writen from
+İlker Manap <a href="https://github.com/ilkermanap">@ilkermanap</a>, <a
+href="https://github.com/ilkermanap/pisi-chroot-build">pisi-chroot-build</a>.</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">With the Docker application
+you can easily prepare for Pisi Linux running Packages. I have prepared with
+this way around 190MB of Pisi Linux base packages <a
+href="https://registry.hub.docker.com/u/ertugerata/pisi-chroot-base">Pisi
+chroot base</a>. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">You need to make view on the
+image, that I created, including the GCC and other applications. The build
+files from the image found you <a
+href="https://github.com/ertugerata/pisi-chroot-farm">here</a>, and the docker
+base img for packaging <a
+href="https://registry.hub.docker.com/u/ertugerata/pisi-chroot-farm">here</a>.
+</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">But how we will use them? At
+the first you must install Docker. The Docker Pisi Linux package is available
+in the main Repository. The Pisi Package is available at the Farm Repository</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code><span style="background-color: Grey;">pisi it docker</span> 
+</code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Before start</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">For the work with Docker is
+Pisi Linux kernel support required, Because it has no using lines in the
+/etc/fstab, you must manually writing and connecting and u are running CGroup
+Docker service.. . </p>
+
+<blockquote style="font-family: Arial,Helvetica,sans-serif">
+  <h3>The complete mounting </h3>
+</blockquote>
+<pre style="font-family: Arial,Helvetica,sans-serif"><span style="font-family: Arial,Helvetica,sans-serif">If you have received this image you have no problems..</span><code>sudo cgroupfs-mount
+sudo docker -d
+</code></pre>
+
+<p></p>
+
+<p><img
+src="https://lh6.googleusercontent.com/-OVxtbS3avgw/VTjL_MVehsI/AAAAAAAAGCs/QUPKe7DS9aA/w1014-h570-no/docker_service.png"
+alt="docker daemonu çalışıyor"></p>
+
+<p></p>
+
+<p>Now you can take the farm or base image. I assume that you not have a quota
+problem, you can compile the package.. </p>
+
+<p></p>
+
+<blockquote>
+  <p>pisilinux-chroot-base and also Pisi Linux files used farm-repositories has
+  been compiled with the new binutils and glibc.Therefore, it is not compatible
+  with the Pisi Linux system that you are using, and it is assumed to make
+  produce problems..</p>
+
+  <p><a
+  href="https://github.com/ilkermanap/pisi-chroot-build">pisi-chroot-build</a>
+  and <a
+  href="https://github.com/ertugerata/pisi-chroot-farm">pisi-chroot-farm</a> If
+  you will examine the code of the primary repository <a
+  href="http://manap.se/pisi/">manap.se/pisi</a> and the source repository <a
+  href="https://github.com/ertugerata/PisiLinux/tree/Pisi-2.0">Pisi Linux
+  2.0</a> look at that branch. </p>
+
+  <p></p>
+</blockquote>
+
+<p>You should check at the first, the base image or the image of the farm. </p>
+
+<p></p>
+<pre><code><span style="background-color: Grey;">sudo docker pull ertugerata/pisi-chroot-farm</span>
+</code></pre>
+
+<p>When the transaction is completed looks it so</p>
+<pre><code><span style="background-color: Grey;">Pull the repository ertugerata/pisi-chroot-farm
+5599ec6d57ca: Download complete 
+3290615324f4: Download complete 
+2b691f7e1007: Download complete 
+b725b4624bd4: Download complete 
+f78c43205c91: Download complete 
+4c7038edae83: Download complete 
+0bb137624718: Download complete 
+a50d8f5355d8: Download complete 
+Status: Image is up to date for ertugerata/pisi-chroot-farm:latest</span>
+</code></pre>
+
+<p>You'll see. The terminal also running the service dock</p>
+
+<p></p>
+<pre><code><span style="background-color: Grey;">INFO[1041] +job log(pull, ertugerata/pisi-chroot-farm:latest, ) 
+INFO[1041] -job log(pull, ertugerata/pisi-chroot-farm:latest, ) = OK (0) 
+INFO[1041] -job pull(ertugerata/pisi-chroot-farm, latest) = OK (0)</span></code></pre>
+
+<p>When you should see this similar lines as here, you are ready.</p>
+
+<p></p>
+
+<p>I'm doing now the follow; I will compile the package with the name d_acl,
+first I create a directory d_acl, and I'm making it into a Dockerfile to. </p>
+
+<p></p>
+<pre><code><span style="background-color: Grey;">mkdir d_acl
+vim Dockerfile</span>
+
+<span style="background-color: Grey;">cat d_acl/Dockerfile 
+#ertugerata/d-acl
+FROM ertugerata/pisi-chroot-farm
+MAINTAINER Ertuğrul Erata &lt;ertugrulerata@gmail.com&gt;
+VOLUME /var/cache/pisi/packages
+VOLUME /var/cache/pisi/archives
+RUN service dbus start &amp;&amp; pisi bi acl --ignore-safety -y &amp;&amp; service dbus stop</span>
+</code></pre>
+
+<p>then it comes into the directory and </p>
+
+<p></p>
+<pre><code><span style="background-color: Grey;">docker build .</span> 
+</code></pre>
+
+<p>by trying to create the image file, it must be completed with a similar log
+in below. </p>
+
+<p></p>
+<pre><code><span style="background-color: Grey;">gmake[2]: Leaving directory '/var/pisi/acl-2.2.52-5/work/acl-2.2.52/man/man3'
+gmake[1]: Leaving directory '/var/pisi/acl-2.2.52-5/work/acl-2.2.52/man'
+DEBUG: return value for "make -j5 DESTDIR=/var/pisi/acl-2.2.52-5/install install install-lib install-dev" is 0
+DEBUG: return value for "install -m0644 "README" /var/pisi/acl-2.2.52-5/install/usr/share/doc/acl" is 0
+DEBUG: /bin/setfacl [stripped]
+DEBUG: /bin/chacl [stripped]
+DEBUG: /bin/getfacl [stripped]
+DEBUG: Removing special libtool file: /var/pisi/acl-2.2.52-5/install/lib/libacl.la
+DEBUG: /lib/libacl.so.1.1.0 [stripped]
+DEBUG: Path /usr/share/man/man3 belongs in multiple packages
+Building package: acl
+Creating acl-2.2.52-5-p01-x86_64.pisi...
+Building package: acl-devel
+Creating acl-devel-2.2.52-5-p01-x86_64.pisi...
+Keeping build directory
+Stopping DBus
+ ---&gt; 8c4755d5fb24
+ Removing intermediate container 8dfa9c6b7903</span>
+
+</code></pre>
+
+<p>The Package build normally, and the dock is in the root directory of the
+image. What you must doing when it not occur, and how we find and eliminate
+errors, that will be continued in the second Article.</p>
+
+<p></p>
+
+<p></p>
+</div>
+</body>
+</html>
