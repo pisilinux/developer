@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Build with Docker Part 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css"
+  media="screen" />
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700"
+  rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css"
+  media="screen" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css"
+  media="screen" />
+  <!--<link rel="stylesheet" href="../../_static/default.css" type="text/css" /> -->
+  <!--<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
+  <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2009',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js">
+ </script>
+  <script type="text/javascript" src="../../_static/doctools.js">
+ </script>
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="top" title="Pisi Linux Developer Base" href="../../index.html" />
+  <link rel="up" title="Docker" href="../index.html" />
+  <link rel="next" title="Build with Docker Part 2"
+  href="build_with_docker_part_2.html" />
+  <link rel="prev" title="Build with Docker Part 1"
+  href="../build_with_docker_part_2/build_with_docker_part_2.html" />
+</head>
+
+<body>
+<a href="https://www.mediafire.com/view/?3hc1r71yv322415" target="_blank"><img
+src="https://www.mediafire.com/convkey/d188/3hc1r71yv3224156g.jpg" border="0"
+alt="Simple, Free Image and File Hosting at MediaFire" /></a> 
+
+<div id="banner">
+
+<div class="related">
+<h3><span style="font-family: Arial,Helvetica,sans-serif">Navigation</span></h3>
+<ul style="font-family: Arial,Helvetica,sans-serif">
+  <li><a
+    href="http://pisilinux.github.io/developer.pisilinux.io/index.html">Home</a></li>
+  <li>» <a
+    href="http://pisilinux.github.io/developer.pisilinux.io/guides/index.html"
+    accesskey="U">Guides</a></li>
+  <li>» <a
+    href="http://pisilinux.github.io/developer.pisilinux.io/docker/index.html"
+    accesskey="U">Build with Docker</a></li>
+  <li>» <a
+    href="http://pisilinux.github.io/developer.pisilinux.io/docker/build_with_docker_part_1.html#build-with-docker-part-1"
+    accesskey="U">Pisi build in Docker -I</a></li>
+</ul>
+</div>
+
+<div id="searchbar" style="font-family: Arial,Helvetica,sans-serif">
+
+<form class="search" action="../../search.html" method="get">
+  <input type="text" name="q" size="18" value="Search" onclick="this.value='';"
+  /> 
+  <input type="submit" value="Go" /> <input type="hidden" name="check_keywords"
+  value="yes" /> <input type="hidden" name="area" value="default" /> </form>
+</div>
+</div>
+
+<div id="content">
+
+<div class="bodywrapper">
+<h1 class="page-title" style="font-family: Arial,Helvetica,sans-serif">Pisi
+build in Docker - II</h1>
+
+<div>
+<p style="font-family: Arial,Helvetica,sans-serif"><a
+href="http://www.ertugerata.com/pisilinux/docker/chroot/2015/04/23/pisi-build-in-docker.html">In
+the first part </a> i addressed issues for the installation. How we can build
+with Docker, with the help of script commands in this part i tell you what you
+need now, to work with Docker without sudo. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">For it in sudo gpasswd -a
+sudo gpasswd-a-Your User name-docker </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">If you closing and reopening
+the session did not restart, You can not add to the beginning of the Docker
+sudo command.</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Docker Git with a similar
+command set, you strain you are using git. There are a few different commands..
+</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Do it as i described in the
+first part of the installation, pisi-chroot-farm image, you can check my
+hub.docker. <a href="https://hub.docker.com/account/signup/">hub.docker.com</a>
+You can browse a lot of images by logging in with a GitHub account. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+
+<table border="1">
+  <tbody>
+    <tr>
+      <td><pre style="font-family: Arial,Helvetica,sans-serif"><code><span style="color: White; background-color: Black;">pisi it docker
+sudo cgroupfs-mount &amp;&amp; sudo docker -d
+docker pull ertugerata/pisi-chroot-farm</span></code></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-family: Arial,Helvetica,sans-serif">You are ready when you're
+last command ends as the follow. Starting with the last line of the command it
+is better to pull docker once we start the day with farm work. Only a few days
+may be a change in the image, due to the release schedule and updates. Of
+course it is also possible to check the page each before you starting with your
+work. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+
+<table border="1" style="font-family: Arial,Helvetica,sans-serif">
+  <tbody>
+    <tr>
+      <td><pre><code><span style="color: White; background-color: Black;">Status: Image is up to date for ertugerata/pisi-chroot-farm:latest</span></code></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-family: Arial,Helvetica,sans-serif">We have the image of the
+current farm; Docker is now running and waiting for tasks.. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Let's talk about a few basic
+commands first. A terminal </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code><span style="color: White; background-color: Black;">docker</span>
+
+</code>We saw all use when you write. Go to this <a href="https://docs.docker.com/reference/commandline/cli">page for more Information. 
+</a></pre>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code><span style="color: White; background-color: Black;">docker</span>
+
+<span style="color: White; background-color: Black;">Usage: docker [OPTIONS] COMMAND [arg...]
+ 
+A self-sufficient runtime for linux containers.
+
+Options:
+--api-cors-header=                   Set CORS headers in the remote API
+-b, --bridge=                        Attach containers to a network bridge
+--bip=                               Specify network bridge IP
+-D, --debug=false                    Enable debug mode
+-d, --daemon=false                   Enable daemon mode
+--default-ulimit=[]                  Set default ulimits for containers
+--dns=[]                             DNS server to use
+--dns-search=[]                      DNS search domains to use
+-e, --exec-driver=native             Exec driver to use
+--fixed-cidr=                        IPv4 subnet for fixed IPs
+--fixed-cidr-v6=                     IPv6 subnet for fixed IPs
+-G, --group=docker                   Group for the unix socket
+-g, --graph=/var/lib/docker          Root of the Docker runtime
+-H, --host=[]                        Daemon socket(s) to connect to
+-h, --help=false                     Print usage
+--icc=true                           Enable inter-container communication
+--insecure-registry=[]               Enable insecure registry communication
+--ip=0.0.0.0                         Default IP when binding container ports
+--ip-forward=true                    Enable net.ipv4.ip_forward
+--ip-masq=true                       Enable IP masquerading
+--iptables=true                      Enable addition of iptables rules
+--ipv6=false                         Enable IPv6 networking
+-l, --log-level=info                 Set the logging level
+--label=[]                           Set key=value labels to the daemon
+--log-driver=json-file               Containers logging driver
+--mtu=0                              Set the containers network MTU
+-p, --pidfile=/var/run/docker.pid    Path to use for daemon PID file
+--registry-mirror=[]                 Preferred Docker registry mirror
+-s, --storage-driver=                Storage driver to use
+--selinux-enabled=false              Enable selinux support
+--storage-opt=[]                     Set storage driver options
+--tls=false                          Use TLS; implied by --tlsverify
+--tlscacert=~/.docker/ca.pem         Trust certs signed only by this CA
+--tlscert=~/.docker/cert.pem         Path to TLS certificate file
+--tlskey=~/.docker/key.pem           Path to TLS key file
+--tlsverify=false                    Use TLS and verify the remote
+-v, --version=false                  Print version information and quit</span>
+
+<span style="color: White; background-color: Black;">Commands:
+
+attach    Attach to a running container
+build     Build an image from a Dockerfile
+commit    Create a new image from a container's changes
+cp        Copy files/folders from a container's filesystem to the host path
+create    Create a new container
+diff      Inspect changes on a container's filesystem
+events    Get real time events from the server
+exec      Run a command in a running container
+export    Stream the contents of a container as a tar archive
+history   Show the history of an image
+images    List images
+import    Create a new filesystem image from the contents of a tarball
+info      Display system-wide information
+inspect   Return low-level information on a container or image
+kill      Kill a running container
+load      Load an image from a tar archive
+login     Register or log in to a Docker registry server
+logout    Log out from a Docker registry server
+logs      Fetch the logs of a container
+port      Lookup the public-facing port that is NAT-ed to PRIVATE_PORT
+pause     Pause all processes within a container
+ps        List containers
+pull      Pull an image or a repository from a Docker registry server
+push      Push an image or a repository to a Docker registry server
+rename    Rename an existing container
+restart   Restart a running container
+rm        Remove one or more containers
+rmi       Remove one or more images
+run       Run a command in a new container
+save      Save an image to a tar archive
+search    Search for an image on the Docker Hub
+start     Start a stopped container
+stats     Display a stream of a containers' resource usage statistics
+stop      Stop a running container
+tag       Tag an image into a repository
+top       Lookup the running processes of a container
+unpause   Unpause a paused container
+version   Show the Docker version information
+wait      Block until a container stops, then print its exit code
+
+Run 'docker COMMAND --help' for more information on a command.
+
+</span></code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Which most of us currently
+have (ps, images, run, start, exec).. </p>
+<ul style="font-family: Arial,Helvetica,sans-serif">
+  <li><em>docker ps</em> the docker container work,</li>
+  <li><em>docker images</em> lists the existing docker image.</li>
+  <li><em>docker run </em> start a docker container from an existing image.</li>
+  <li><em>docker start</em> starts an existing container.</li>
+  <li><em>docker exec</em> command staff sends a command to a container, the
+    terminal prints the results</li>
+  <li><em>docker attach </em>allows employees to work in a connecting
+  container.</li>
+</ul>
+
+<p style="font-family: Arial,Helvetica,sans-serif">First, let's look at the
+current image Have our hands; docker images</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <ins>REPOSITORY                             TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+  ertugerata/pisi-chroot-farm            latest              11eded996be3        15 hours ago        548.4 MB</ins></code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Do we wonder if we working
+on Our Shelters?? </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <span style="color: White; background-color: Black;">docker ps</span>
+</code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif">No one can run our image, it
+has been listed under the Repository.. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <ins>docker run ertugerata/pisi-chroot-farm pisi li -b buildfarm</ins></code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif">This command will return
+empty because no package installed in the farm store in our image. What is
+working and returning empty containers? Stands.. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Do we have a container that
+stopped working before this? If we can start with the start of container Docker
+her behalf. As a general rule remains in our minds that get results in full,
+not be able to start returning empty containers.</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <span style="color: White; background-color: Black;">docker ps -a</span>
+
+  
+  <ins>CONTAINER ID        IMAGE                                    COMMAND                     CREATED          STATUS                     PORTS          NAMES
+
+  7636ccc100d5        ertugerata/pisi-chroot-farm:latest   "pisi li -b buildfar   12 seconds ago      Exited (0) 5 seconds ago                stupefied_hoover </ins></code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Top right NAMES under the
+name may be different in you.. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">A service, and container
+dock and run as daemon i have work to wait..</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <ins>docker run -itd ertugerata/pisi-chroot-farm bash</ins>
+
+  
+  <span style="color: White; background-color: Black;">docker ps</span>
+
+  
+  <ins>CONTAINER ID        IMAGE                                COMMAND             CREATED             STATUS              PORTS               NAMES
+
+  4da1ee0f65dc        ertugerata/pisi-chroot-farm:latest   "bash"              14 seconds ago      Up 13 seconds                           backstabbing_bardeen</ins></code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">We see that the container
+work..</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">.</p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <ins>docker exec backstabbing_bardeen pisi li -b buildfarm</ins>
+</code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif">this command will return
+null.. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <ins>docker attach backstabbing_bardeen
+  4da1ee0f65dc ~ #</ins> 
+</code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Now docker / chroot are in
+here. Pis-2.0 source repository is attached. See the store and update..</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <span style="color: White; background-color: Black;">pisi lr</span>
+  <span style="color: White; background-color: Black;">pisi ur</span>
+</code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif">To configure the COMAR
+service packages that be a need a dbus.</p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"></p>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code>  <span style="color: White; background-color: Black;">service dbus start</span>
+  
+  <span style="color: White; background-color: Black;">pisi bi -Any package- -d --ignore-safety</span>
+
+</code></pre>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Do not forget to compile the
+packages with the -ignore-safety command. Take note if the dependencies are not
+compiled with Pisi-2.0 branch you must corrected the pspec.xml s. </p>
+
+<p style="font-family: Arial,Helvetica,sans-serif">Note. You can listen to
+everything. But the missing packages are recommended that you must start the
+download from the farm repository for a minimum to complete it all.</p>
+
+<p></p>
+
+<p style="font-family: Arial,Helvetica,sans-serif"><span
+style="font-family: Arial,Helvetica,sans-serif">Good luck.</span></p>
+
+<p></p>
+
+<p></p>
+</div>
+</div>
+</div>
+</body>
+</html>
