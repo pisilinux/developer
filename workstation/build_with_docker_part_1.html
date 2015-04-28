@@ -55,8 +55,7 @@ the first you must install Docker. The Docker Pisi Linux package is available
 in the main Repository. The Pisi Package is available at the Farm Repository</p>
 
 <p style="font-family: Arial,Helvetica,sans-serif"></p>
-<pre style="font-family: Arial,Helvetica,sans-serif"><code><span style="background-color: Grey;">pisi it docker</span> 
-</code></pre>
+<pre style="font-family: Arial,Helvetica,sans-serif"><code><span style="color: White; background-color: Black;"><span style="color: White; background-color: Black;"><span style="color: Black;"><span style="background-color: Grey;">pisi it docker</span> </span></span></span></code></pre>
 
 <p style="font-family: Arial,Helvetica,sans-serif">Before start</p>
 
@@ -69,8 +68,7 @@ Docker service.. . </p>
   <h3>The complete mounting </h3>
 </blockquote>
 <pre style="font-family: Arial,Helvetica,sans-serif"><span style="font-family: Arial,Helvetica,sans-serif">If you have received this image you have no problems..</span><code>sudo cgroupfs-mount
-sudo docker -d
-</code></pre>
+sudo docker -d</code></pre>
 
 <p></p>
 
@@ -106,8 +104,7 @@ problem, you can compile the package.. </p>
 <p>You should check at the first, the base image or the image of the farm. </p>
 
 <p></p>
-<pre><code><span style="background-color: Grey;">sudo docker pull ertugerata/pisi-chroot-farm</span>
-</code></pre>
+<pre><code><span style="background-color: Grey;">sudo docker pull ertugerata/pisi-chroot-farm</span></code></pre>
 
 <p>When the transaction is completed looks it so</p>
 <pre><code><span style="background-color: Grey;">Pull the repository ertugerata/pisi-chroot-farm
@@ -119,8 +116,7 @@ f78c43205c91: Download complete
 4c7038edae83: Download complete 
 0bb137624718: Download complete 
 a50d8f5355d8: Download complete 
-Status: Image is up to date for ertugerata/pisi-chroot-farm:latest</span>
-</code></pre>
+Status: Image is up to date for ertugerata/pisi-chroot-farm:latest</span></code></pre>
 
 <p>You'll see. The terminal also running the service dock</p>
 
@@ -146,14 +142,12 @@ FROM ertugerata/pisi-chroot-farm
 MAINTAINER Ertuğrul Erata &lt;ertugrulerata@gmail.com&gt;
 VOLUME /var/cache/pisi/packages
 VOLUME /var/cache/pisi/archives
-RUN service dbus start &amp;&amp; pisi bi acl --ignore-safety -y &amp;&amp; service dbus stop</span>
-</code></pre>
+RUN service dbus start &amp;&amp; pisi bi acl --ignore-safety -y &amp;&amp; service dbus stop</span></code></pre>
 
 <p>then it comes into the directory and </p>
 
 <p></p>
-<pre><code><span style="background-color: Grey;">docker build .</span> 
-</code></pre>
+<pre><code><span style="background-color: Grey;">docker build .</span> </code></pre>
 
 <p>by trying to create the image file, it must be completed with a similar log
 in below. </p>
@@ -177,7 +171,6 @@ Keeping build directory
 Stopping DBus
  ---&gt; 8c4755d5fb24
  Removing intermediate container 8dfa9c6b7903</span>
-
 </code></pre>
 
 <p>The Package build normally, and the dock is in the root directory of the
