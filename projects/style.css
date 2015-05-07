@@ -37,10 +37,10 @@ h1, h2, h3, h4{font-family: 'Lato', sans-serif;}
 
 
 /* Menu */
-.menu{float:right; padding:0 20px 0 0;}
-.menu ul {list-style:none; margin:0; padding:0px;}
-.menu ul * {margin:0; padding:0;}
-.menu ul li {float:left; padding:0 10px 0 10px; height:35px;}
+.menu{float:right; padding:3 20px 0 0;}
+.menu ul {list-style:none; margin:3; padding:3px;}
+.menu ul * {margin:3; padding:3;}
+.menu ul li {float:left; padding:3 10px 0 10px; height:35px;}
 .menu ul li a{font-family: 'Lato', sans-serif;color:#fff; font-size:14px;padding:5px 10px;}
 .menu ul li.selected a{border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;background-color:#036daa; }
 .menu ul li a:hover{border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;background-color:#036daa; }
