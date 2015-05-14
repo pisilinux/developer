@@ -1,64 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Bug Tracking Guide</title>
-    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '2009',
-        COLLAPSE_MODINDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="Pardus v2009 documentation" href="../../index.html" />
-    <link rel="up" title="Guides" href="../index.html" />
-    <link rel="next" title="Bug Cycle" href="bug_cycle.html" />
-    <link rel="prev" title="Things To Check While Reviewing" href="../packaging/reviewing_guidelines.html" /> 
-  </head>
-  <body>
-    <div id="banner">
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-          <li> &raquo;&nbsp;<a href="../index.html" accesskey="U">Guides</a></li>
-         <li> &raquo;&nbsp;<a href="" accesskey="U">Bug Tracking Guide</a></li> 
-      </ul>
-    </div>
-        <div id="searchbar">
-                    <form class="search" action="../../search.html" method="get">
-                      <input type="text" name="q" size="18" value="Search" onclick="this.value='';" /> <input type="submit" value="Go" />
-                      <input type="hidden" name="check_keywords" value="yes" />
-                      <input type="hidden" name="area" value="default" />
-                    </form>
-          </div>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Pisi Linux Developer Guide" />
+<meta name="description" content="Guides for Developing Pisi Linux" />
+<meta name="keywords" content="css templates market, free css templates, premium css templates, buy css template, free responsive css template" />
+<title>Pisi Linux Developer Base | The Developer Guides from Pisi Linux</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" charset="utf-8">
+var $ = jQuery.noConflict();
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+          animation: "slide"
+    });
+  });
+</script>
+</head>
+<body>
+
+  <div id="header">
+        <div class="header_content">
+      
+        <div class="logo"><a href="index.html">Pisi Linux Developer Base</a></div>
+        
+        <div class="menu">
+            <ul>
+                <li class="selected"><a href="index.html">Team</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../workstation/index.html">Workstation</a></li>
+                <li><a href="../guides/index.html">Guides</a></li>
+                <li><a href="../projects/index.html">Projects</a></li>
+                <li><a href="../releases/index.html">Releases</a></li>
+                <li><a href="index.html">Team</a></li>
+                <li><a href="../artwork/index.html">Artwork</a></li>
+            </ul>
+         </div>
+         
+        </div> 
+  </div><!-- End of Header -->
+
+<div id="wrap">	
+
+  
+   <div class="slider">
+		<div class="flexslider">
+	    <ul class="slides">
+	    	<li><a href="page.html"><img src="images/bug.png" alt="" title="" border="0"/></a>
+            </li>
+            <li><a href="page.html"><img src="images/bug1.png" alt="" title="" border="0"/></a>
+            </li>
+            <li><a href="page.html"><img src="images/bug2.png" alt="" title="" border="0"/></a>
+            </li>
+	    </ul>
+	  </div>
+   </div>
+   
+   <div class="subslider_details">
+   <h2>You can now Work with the Pisi Linux Team, step in now you are very welcome</h2>
+   <a href="page.html" class="order_button">Be a Member Now!</a>
+   </div>
+   <div class="center_content">
       </div>
     <div id="content">
         <div class="bodywrapper">
           
-            <b>Table of Contents</b>
+            <!--<b>Table of Contents</b> -->
             <ul>
-<li><a class="reference external" href="">Bug Tracking Guide</a><ul>
+<!--<li><a class="reference external" href="">Bug Tracking Guide</a><ul>
 </ul>
-</li>
+</li> -->
 </ul>
 
           <div class="body">
               
   
   <div class="section" id="bug-tracking-guide">
-<span id="bugtracking-index"></span><h1>Bug Tracking Guide<a class="headerlink" href="#bug-tracking-guide" title="Permalink to this headline">¶</a></h1>
+<span id="bugtracking-index"></span><h1>Bug Tracking Guide<a class="headerlink" href="#bug-tracking-guide" title="Permalink to this headline"></a></h1>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="bug_cycle.html">Bug Cycle</a></li>
 </ul>
@@ -147,15 +167,107 @@
 </div>
 
 
-          </div>
+ <div class="section_13">
+            <h2>Technology used</h2>
+                 <ul>
+                 <li><a href="../../projects/index.html" title="">Technology</a></li>
+                 <li><a href="https://www.transifex.com/organization/pisi-linux/dashboard/pisilinux" title="">Translations</a></li>
+                 <li><a href="http://www.pisilinux.org/indir/" title="">Download</a></li>
+                 <li><a href="http://bugs.pisilinux.org/" title="">Bugs</a></li>
+                 <li><a href="https://plus.google.com/communities/111137055967484281110" title="">Pisi Linux Global</a></li>                 
+                </ul>
+            </div>
+            
+            <div class="section_13">
+		    <h2>Screenshots</h2>
+		    <div class="screenshots">
+		    <ul>
+		    <li><a href="https://www.dropbox.com/s/0ybr876fha5xujj/enlightement1%20%281%29.png?dl=0"><img src="images/enlightement1.png" alt="" title="Enlightement Desktop" border="0" /></a></li>
+		    <li><a href="https://www.dropbox.com/s/x8o96pi5phn5i6m/lxqt1.png?dl=0"><img src="images/lxqt1.png" alt="" title="LXQT Desktop" border="0" /></a></li>
+		    <li><a href="https://www.dropbox.com/s/uej30vzhpy23elc/mate3.png?dl=0"><img src="images/mate3.png" alt="" title="Mate Desktop" border="0" /></a></li>
+		    <li><a href="https://www.dropbox.com/s/956nlwuna7kj9ff/xfce2.png?dl=0"><img src="images/xfce2.png" alt="" title="XFCE Desktop" border="0" /></a></li>
+		    <li><a href="https://www.dropbox.com/s/hwbohslykkypqe7/openbox1.png?dl=0"><img src="images/openbox1.png" alt="" title="Openbox Desktop" border="0" /></a></li>
+		    <li><a href="https://www.dropbox.com/s/3ozvvuyu8wpb5j2/pisi-kde.png?dl=0"><img src="images/pisi-kde11.png" alt="" title="KDE Desktop" border="0" /></a></li>
+		    </ul>
+		    <a href="https://pisilinuxgermany.wordpress.com/videos/pisi-linux-promotion-diashow/" class="read_more left">Promotion Video</a>
+		    </div>
+		    </div>
+            
+            
+            
+  
+  <div class="clear"></div> 
+  </div>
+  
+</div>   
+<div id="footer">
+	<div class="footer_content">
+    	<div class="footer_left">
+        <h2>References</h2>
+        	<div class="references">
+            <li><a href="http://distrowatch.com/table.php?distribution=pisi">Pisi Linux on Distrowatch</a></li>
+            <li><a href="https://sourceforge.net/projects/pisilinux/">Pisi Linux on Sourceforge</a></li>
+            <li><a href="http://www.linuxbsdos.com/2014/11/10/pisi-linux-1-1-review/">Pisi Linux on Linux BSDos.com</a></li>
+            </a>
+            </div>
         </div>
-      </div>
-    <div class="clearer"></div>
-    </div>
-    <div class="footer">
-        Pardus® and Pardus® logo are registered trademarks of TÜBİTAK/UEKAE. 
-        <!--&copy; Copyright 2008-2010, Pardus Developers.-->
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
-    </div>
+        
+    	<div class="footer_left">
+        <h2>Contact</h2>
+        	<div class="info">
+            <p>
+            When you will contribute Pisi Linux write a E-Mail with a little Introducing of yourself at <br />
+            Adress:  <span>admins@pisilinux.org</span> <br />
+            </p>
+                <div class="social">
+                <a href="rss.xml"><img src="images/rss-icon.png" alt="" title="" border="0" /></a>
+                <a href="https://www.facebook.com/Pisilinux"><img src="images/facebook_logo.png" alt="" title="" border="0" /></a>
+                <a href="https://plus.google.com/communities/113565681602860915332"><img src="images/google+.png" alt="" title="" border="0" /></a>
+                <!--<a href="#"><img src="images/reddit.gif" alt="" title="" border="0" /></a> -->
+                <a href="https://twitter.com/pisilinux"><img src="images/twitter.gif" alt="" title="" border="0" /></a>
+                </div>
+            </div>
+        </div> 
+        
+        
+        <div class="footer_right">
+        <h2>Network Links</h2>
+            <ul>
+            <li><a href="http://www.pisilinux.org/">Homepage</a></li>
+            <li><a href="http://forum.pisilinux.org/">Forum</a></li>
+            <li><a href="http://team.pisilinux.org/">Team Blog</a></li>
+            <li><a href="https://github.com/pisilinux">Repositories</a></li>
+            <li><a href="https://pisilinuxgermany.wordpress.com/">German Website</a></li>
+            </ul>
+            
+             <ul>
+            <li><a href="https://pisilife.wordpress.com/">Spanish Blog</a></li>
+            <li><a href="http://pisilinux-french.blogspot.be/">French Blog</a></li>
+            <li><a href="http://www.pisilinux.org/irc-2/">IRC</a></li>
+            <li><a href="http://pisi.slack.com/">Slack Chat</a></li>
+            <li><a href="http://wiki.pisilinux.org/">Wiki</a></li>
+            </ul>           
+        </div>
+        
+        <div class="footer_bottom">
+            <div class="copyrights">
+            Pisi Linux Developer Base by <a href="http://www.pisilinux.org/" target="_blank">Pisi Linux Homepage</a>
+            </div>
+            <div class="footer_right_links">
+            <ul>
+                <li class="selected"><a href="index.html">home</a></li>
+                <li><a href="http://forum.pisilinux.org/">Pisi Linux Forum</a></li>
+                <li><a href="http://team.pisilinux.org/">Pisi Linux Team Blog</a></li>
+                <li><a href="https://github.com/pisilinux">Pisi Linux Repositories</a></li>
+                <li><a href="https://pisilife.wordpress.com/">Pisi Linux in Spanish Language</a></li>
+                <li><a href="https://pisilinuxgermany.wordpress.com/">Pisi Linux in Spanish Language</a></li>
+            </ul>
+            </div>
+        </div>
+
+     <div class="clear"></div>   
+         </div>
+  </div>
+ 
   </body>
-</html>
+  </html>
