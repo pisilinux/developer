@@ -1,0 +1,15 @@
+ <?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="0.91">
+<channel>
+<title>Pisi Linux Developer Base</title>
+<link>http://pisilinux.github.io/developer.pisilinux.io/index.html</link>
+<description>Guides for Pisi Linux Developer and those who want to be a Developer</description>
+<language>en-en</language>
+<copyright>2015 - pisilinux.org</copyright>
+<!--<item>
+<title>PHP-Bausteine: Formulareingaben überprüfen</title>
+<link>http://www.webbausteine.de/bausteine/php_bausteine11.php#2</link>
+<description>Formulareingaben überprüfen und Fehlermeldungen ausgeben.</description>
+</item> -->
+</channel>
+</rss>
